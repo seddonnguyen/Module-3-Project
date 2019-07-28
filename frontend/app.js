@@ -1,4 +1,5 @@
-let postURL = "http://localhost:3000/posts/"
+const postURL = "http://localhost:3000/posts"
+const commentsUrl = 'http://localhost:3000/comments'
 
 fetch(postURL)
   .then(parseJSON)
@@ -25,8 +26,9 @@ function displayPost(post) {
   addPosted(div, post)
   addImage(div, post)
   addDescription(div, post)
-  addComments(div, post)
-
+  let ul = addComments(div, post)
+  let form = addSubmitComment(div)
+  addSubmitEvent(form, ul, post)
 
   divCard.appendChild(div)
   const main = document.querySelector('main')
@@ -64,9 +66,65 @@ function addComments(div, post) {
 
   let ul = document.createElement('ul')
   post.comments.forEach(comment => {
-    let li = document.createElement('li')
-    li.textContent = comment.comment
-    ul.appendChild(li)
+    let li = createCommentElement(comment.content)
+    displayComment(ul, li)
   })
   div.appendChild(ul)
+  return ul
+}
+
+function addSubmitComment(div) {
+  let form = document.createElement('form')
+
+  let textInput = document.createElement("input")
+  textInput.setAttribute("type", "text")
+  textInput.name = "content"
+  textInput.placeholder = "Add a Comment"
+  form.appendChild(textInput)
+
+  let submitButton = document.createElement("input")
+  submitButton.setAttribute("type", "submit")
+  form.appendChild(submitButton)
+
+  div.appendChild(form)
+  return form
+}
+
+function addSubmitEvent(form, ul, post) {
+  form.addEventListener("submit", event => {
+    event.preventDefault()
+
+    const formData = new FormData(event.target)
+
+    const comment = {
+      post_id: post.id,
+      content: formData.get("content")
+    }
+    console.log("Post ID", post.id)
+    event.target.reset()
+
+    let commentElement = createCommentElement(formData.get("content"))
+    displayComment(ul, commentElement)
+    postNewComment(comment)
+  })
+}
+
+function createCommentElement(content) {
+  const comment = document.createElement('li')
+  comment.textContent = content
+  return comment
+}
+
+function displayComment(ul, comment) {
+  ul.appendChild(comment)
+}
+
+function postNewComment(comment) {
+  return fetch(commentsUrl, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(comment)
+  })
 }
