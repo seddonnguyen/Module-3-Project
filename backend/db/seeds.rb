@@ -11,7 +11,7 @@ Post.delete_all
 dog_boarding_kennel = Post.create(posted: Time.now.strftime("%m/%d/%Y"),
                                   title: "Dog Boarding Kennel",
                                   description: "We have recently opened a dog boarding facility near Murphy Creek in Aurora. We have nice climate controlled indoor kennels with cots, and we have two private turf yards for your dogs to play in. We have an excellent and very experienced staff. This this owner operated, and we live on the premises. Our rate is $30/per night per dog.",
-                                  image: "http://www.dogboarding.net/wp-content/uploads/2012/04/website1.jpg")
+                                  image: "https://images.craigslist.org/00x0x_d2JbHLwsGJM_600x450.jpg")
 
 Comment.create(post: dog_boarding_kennel, comment: "What is your phone number")
 Comment.create(post: dog_boarding_kennel, comment: "720-939-2595")
