@@ -24,13 +24,14 @@ function AddPostElement() {
   button.addEventListener('click', event => {
     resetMain()
 
+    const main = document.querySelector('main')
+    main.appendChild(addBackButton())
+
     let form = document.createElement('form')
     addTitleInputField(form, "")
     addDescriptionInputField(form, "")
     addImageInputField(form, "")
     addSubmitButton(form)
-
-    const main = document.querySelector('main')
     main.appendChild(form)
 
     form.addEventListener("submit", event => {
@@ -57,46 +58,75 @@ function AddPostElement() {
   main.appendChild(button)
 }
 
+function addBackButton() {
+  let backButton = document.createElement('button')
+  backButton.textContent = "Back"
+  backButton.addEventListener("click", event => {
+    resetMain()
+    fetch(postURL)
+      .then(parseJSON)
+      .then(listPosts)
+  })
+  return backButton
+}
+
 function addTitleInputField(form, value) {
+  let div = document.createElement('div')
+  div.className = "form-group"
+
   let label = document.createElement('label')
   label.textContent = "Title: "
   label.htmlFor = "title"
-  form.appendChild(label)
+  div.appendChild(label)
 
-  let inputElement = document.createElement("input")
-  inputElement.setAttribute("type", "text")
+  let inputElement = document.createElement("textarea")
   inputElement.name = "title"
   inputElement.value = value
   inputElement.placeholder = "Add a title"
-  form.appendChild(inputElement)
+  inputElement.className = "form-control"
+
+  div.appendChild(inputElement)
+  form.appendChild(div)
 }
 
 function addDescriptionInputField(form, value) {
+  let div = document.createElement('div')
+  div.className = "form-group"
+
   let label = document.createElement('label')
   label.textContent = "Description: "
   label.htmlFor = "description"
-  form.appendChild(label)
+  div.appendChild(label)
 
-  let inputElement = document.createElement("input")
-  inputElement.setAttribute("type", "text")
+  let inputElement = document.createElement("textarea")
   inputElement.name = "description"
   inputElement.value = value
   inputElement.placeholder = "Add a description"
-  form.appendChild(inputElement)
+  inputElement.className = "form-control"
+
+  div.appendChild(inputElement)
+  form.appendChild(div)
 }
 
-function addImageInputField(form, value) {
-  let label = document.createElement('label')
-  label.textContent = "Image URL: "
-  label.htmlFor = "image"
-  form.appendChild(label)
+function addSubmitComment(div) {
+  let formDiv = document.createElement('div')
+  formDiv.className = "form-group"
 
-  let inputElement = document.createElement("input")
-  inputElement.setAttribute("type", "text")
-  inputElement.name = "image"
-  inputElement.value = value
-  inputElement.placeholder = "Add an image URL"
-  form.appendChild(inputElement)
+  let form = document.createElement('form')
+
+  let textInput = document.createElement("textarea")
+  textInput.name = "content"
+  textInput.placeholder = "Add a Comment"
+  textInput.className = "form-control"
+
+  let submitButton = document.createElement("input")
+  submitButton.setAttribute("type", "submit")
+
+  form.appendChild(textInput)
+  form.appendChild(submitButton)
+  formDiv.appendChild(form)
+  div.appendChild(formDiv)
+  return form
 }
 
 function addSubmitButton(form) {
@@ -122,13 +152,14 @@ function displayPost(post) {
 
   addTitle(div, post)
   addEditPost(div, post)
+  addDeletePost(div, post)
   addPosted(div, post)
   addImage(div, post)
   addDescription(div, post)
   let ul = addComments(div, post)
   let form = addSubmitComment(div)
   addSubmitEvent(form, ul, post)
-  addDeletePost(div, post)
+
 
   divCard.appendChild(div)
   const main = document.querySelector('main')
@@ -144,13 +175,14 @@ function addEditPost(div, post) {
   button.addEventListener('click', event => {
     resetMain()
 
+    const main = document.querySelector('main')
+    main.appendChild(addBackButton())
+
     let form = document.createElement('form')
     addTitleInputField(form, post.title)
     addDescriptionInputField(form, post.description)
     addImageInputField(form, post.image)
     addSubmitButton(form)
-
-    const main = document.querySelector('main')
     main.appendChild(form)
 
     form.addEventListener("submit", event => {
@@ -178,6 +210,26 @@ function addEditPost(div, post) {
                     .then(listPosts))
     })
   })
+}
+
+function addDeletePost(div, post) {
+  let button = document.createElement('button')
+  button.textContent = "Remove Post"
+
+  button.addEventListener("click", event => {
+    if(event.target.tagName == 'BUTTON') {
+      event.target.parentNode.parentNode.remove()
+
+      fetch(`${postURL}/${post.id}`, {
+        method: "DELETE",
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+    }
+  })
+
+  div.appendChild(button)
 }
 
 function addTitle(div, post) {
@@ -218,21 +270,24 @@ function addComments(div, post) {
   return ul
 }
 
-function addSubmitComment(div) {
-  let form = document.createElement('form')
+function addImageInputField(form, value) {
+  let div = document.createElement('div')
+  div.className = "form-group"
 
-  let textInput = document.createElement("input")
-  textInput.setAttribute("type", "text")
-  textInput.name = "content"
-  textInput.placeholder = "Add a Comment"
-  form.appendChild(textInput)
+  let label = document.createElement('label')
+  label.textContent = "Image URL: "
+  label.htmlFor = "image"
+  div.appendChild(label)
 
-  let submitButton = document.createElement("input")
-  submitButton.setAttribute("type", "submit")
-  form.appendChild(submitButton)
+  let inputElement = document.createElement("input")
+  inputElement.setAttribute("type", "text")
+  inputElement.name = "image"
+  inputElement.value = value
+  inputElement.placeholder = "Add an image URL"
+  inputElement.className = "form-control"
 
-  div.appendChild(form)
-  return form
+  div.appendChild(inputElement)
+  form.appendChild(div)
 }
 
 function addSubmitEvent(form, ul, post) {
@@ -252,26 +307,6 @@ function addSubmitEvent(form, ul, post) {
     displayComment(ul, commentElement)
     postNew(commentsUrl, comment)
   })
-}
-
-function addDeletePost(div, post) {
-  let button = document.createElement('button')
-  button.textContent = "Remove Post"
-
-  button.addEventListener("click", event => {
-    if(event.target.tagName == 'BUTTON') {
-      event.target.parentNode.parentNode.remove()
-
-      fetch(`${postURL}/${post.id}`, {
-        method: "DELETE",
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
-    }
-  })
-
-  div.appendChild(button)
 }
 
 function createCommentElement(content) {
