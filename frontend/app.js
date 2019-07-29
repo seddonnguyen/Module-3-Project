@@ -11,7 +11,102 @@ function parseJSON(response) {
 }
 
 function listPosts(posts) {
+  AddPostElement()
   posts.forEach(displayPost)
+  return posts
+}
+
+function AddPostElement() {
+
+  let button = document.createElement('button')
+  button.textContent = "Add a Post"
+
+  button.addEventListener('click', event => {
+    resetMain()
+
+    let form = document.createElement('form')
+    addTitleInputField(form)
+    addDescriptionInputField(form)
+    addImageInputField(form)
+    addSubmitButton(form)
+
+    const main = document.querySelector('main')
+    main.appendChild(form)
+
+    form.addEventListener("submit", event => {
+      event.preventDefault()
+      const formData = new FormData(event.target)
+
+      const post = {
+        title: formData.get("title"),
+        description: formData.get("description"),
+        image: formData.get("image")
+      }
+
+      resetMain()
+      postNew(postURL, post)
+      .then(() =>
+        fetch(postURL)
+        .then(parseJSON)
+        .then(listPosts))
+
+    })
+  })
+
+  const main = document.querySelector('main')
+  main.appendChild(button)
+}
+
+function addTitleInputField(form) {
+  let label = document.createElement('label')
+  label.textContent = "Title: "
+  label.htmlFor = "title"
+  form.appendChild(label)
+
+  let inputElement = document.createElement("input")
+  inputElement.setAttribute("type", "text")
+  inputElement.name = "title"
+  inputElement.placeholder = "Add a title"
+  form.appendChild(inputElement)
+}
+
+function addDescriptionInputField(form) {
+  let label = document.createElement('label')
+  label.textContent = "Description: "
+  label.htmlFor = "description"
+  form.appendChild(label)
+
+  let inputElement = document.createElement("input")
+  inputElement.setAttribute("type", "text")
+  inputElement.name = "description"
+  inputElement.placeholder = "Add a description"
+  form.appendChild(inputElement)
+}
+
+function addImageInputField(form) {
+  let label = document.createElement('label')
+  label.textContent = "Image URL: "
+  label.htmlFor = "image"
+  form.appendChild(label)
+
+  let inputElement = document.createElement("input")
+  inputElement.setAttribute("type", "text")
+  inputElement.name = "image"
+  inputElement.placeholder = "Add an image URL"
+  form.appendChild(inputElement)
+}
+
+function addSubmitButton(form) {
+  let submitButton = document.createElement("input")
+  submitButton.setAttribute("type", "submit")
+  form.appendChild(submitButton)
+}
+
+function resetMain() {
+  document.querySelector('main').remove()
+  const body = document.querySelector('body')
+  const main = document.createElement('main')
+  body.appendChild(main)
 }
 
 function displayPost(post) {
@@ -100,12 +195,12 @@ function addSubmitEvent(form, ul, post) {
       post_id: post.id,
       content: formData.get("content")
     }
-    console.log("Post ID", post.id)
+
     event.target.reset()
 
     let commentElement = createCommentElement(formData.get("content"))
     displayComment(ul, commentElement)
-    postNewComment(comment)
+    postNew(commentsUrl, comment)
   })
 }
 
@@ -119,12 +214,12 @@ function displayComment(ul, comment) {
   ul.appendChild(comment)
 }
 
-function postNewComment(comment) {
-  return fetch(commentsUrl, {
+function postNew(url, obj) {
+  return fetch(url, {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
     },
-    body: JSON.stringify(comment)
+    body: JSON.stringify(obj)
   })
 }
