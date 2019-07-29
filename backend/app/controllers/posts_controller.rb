@@ -9,6 +9,12 @@ class PostsController < ApplicationController
     render json: post
   end
 
+  def destroy
+    post = Post.find(params[:id])
+    post.comments.each {|comment| comment.destroy }
+    post.destroy
+  end
+
   private
 
   def allow_params
