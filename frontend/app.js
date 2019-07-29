@@ -124,10 +124,31 @@ function displayPost(post) {
   let ul = addComments(div, post)
   let form = addSubmitComment(div)
   addSubmitEvent(form, ul, post)
+  addDeletePost(div, post)
 
   divCard.appendChild(div)
   const main = document.querySelector('main')
   main.appendChild(divCard)
+}
+
+function addDeletePost(div, post) {
+  let button = document.createElement('button')
+  button.textContent = "Remove Post"
+
+  button.addEventListener("click", event => {
+    if(event.target.tagName == 'BUTTON') {
+      event.target.parentNode.parentNode.remove()
+
+      fetch(`${postURL}/${post.id}`, {
+        method: "DELETE",
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+    }
+  })
+
+  div.appendChild(button)
 }
 
 function addTitle(div, post) {
@@ -136,16 +157,16 @@ function addTitle(div, post) {
   div.appendChild(h4)
 }
 
-function addImage(div, post) {
-  let img = document.createElement('img')
-  img.src = post.image
-  div.appendChild(img)
-}
-
 function addPosted(div, post) {
   let p = document.createElement('p')
   p.textContent = `Posted: ${post.posted}`
   div.appendChild(p)
+}
+
+function addImage(div, post) {
+  let img = document.createElement('img')
+  img.src = post.image
+  div.appendChild(img)
 }
 
 function addDescription(div, post) {
