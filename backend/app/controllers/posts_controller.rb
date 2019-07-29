@@ -15,6 +15,14 @@ class PostsController < ApplicationController
     post.destroy
   end
 
+  def update
+    post = Post.find(params[:id])
+    post.title = params[:title]
+    post.description = params[:description]
+    post.image = params[:image]
+    post.save
+  end
+
   private
 
   def allow_params

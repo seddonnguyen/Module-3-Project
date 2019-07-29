@@ -25,9 +25,9 @@ function AddPostElement() {
     resetMain()
 
     let form = document.createElement('form')
-    addTitleInputField(form)
-    addDescriptionInputField(form)
-    addImageInputField(form)
+    addTitleInputField(form, "")
+    addDescriptionInputField(form, "")
+    addImageInputField(form, "")
     addSubmitButton(form)
 
     const main = document.querySelector('main')
@@ -57,7 +57,7 @@ function AddPostElement() {
   main.appendChild(button)
 }
 
-function addTitleInputField(form) {
+function addTitleInputField(form, value) {
   let label = document.createElement('label')
   label.textContent = "Title: "
   label.htmlFor = "title"
@@ -66,11 +66,12 @@ function addTitleInputField(form) {
   let inputElement = document.createElement("input")
   inputElement.setAttribute("type", "text")
   inputElement.name = "title"
+  inputElement.value = value
   inputElement.placeholder = "Add a title"
   form.appendChild(inputElement)
 }
 
-function addDescriptionInputField(form) {
+function addDescriptionInputField(form, value) {
   let label = document.createElement('label')
   label.textContent = "Description: "
   label.htmlFor = "description"
@@ -79,11 +80,12 @@ function addDescriptionInputField(form) {
   let inputElement = document.createElement("input")
   inputElement.setAttribute("type", "text")
   inputElement.name = "description"
+  inputElement.value = value
   inputElement.placeholder = "Add a description"
   form.appendChild(inputElement)
 }
 
-function addImageInputField(form) {
+function addImageInputField(form, value) {
   let label = document.createElement('label')
   label.textContent = "Image URL: "
   label.htmlFor = "image"
@@ -92,6 +94,7 @@ function addImageInputField(form) {
   let inputElement = document.createElement("input")
   inputElement.setAttribute("type", "text")
   inputElement.name = "image"
+  inputElement.value = value
   inputElement.placeholder = "Add an image URL"
   form.appendChild(inputElement)
 }
@@ -118,6 +121,7 @@ function displayPost(post) {
   div.dataset.id = post.id
 
   addTitle(div, post)
+  addEditPost(div, post)
   addPosted(div, post)
   addImage(div, post)
   addDescription(div, post)
@@ -131,24 +135,49 @@ function displayPost(post) {
   main.appendChild(divCard)
 }
 
-function addDeletePost(div, post) {
-  let button = document.createElement('button')
-  button.textContent = "Remove Post"
+function addEditPost(div, post) {
 
-  button.addEventListener("click", event => {
-    if(event.target.tagName == 'BUTTON') {
-      event.target.parentNode.parentNode.remove()
+  let button = document.createElement('button')
+  button.textContent = "Edit Post"
+  div.appendChild(button)
+
+  button.addEventListener('click', event => {
+    resetMain()
+
+    let form = document.createElement('form')
+    addTitleInputField(form, post.title)
+    addDescriptionInputField(form, post.description)
+    addImageInputField(form, post.image)
+    addSubmitButton(form)
+
+    const main = document.querySelector('main')
+    main.appendChild(form)
+
+    form.addEventListener("submit", event => {
+      event.preventDefault()
+      const formData = new FormData(event.target)
+
+      console.log(post.id)
+
+      const postObj = {
+        title: formData.get("title"),
+        description: formData.get("description"),
+        image: formData.get("image")
+      }
+
+      resetMain()
 
       fetch(`${postURL}/${post.id}`, {
-        method: "DELETE",
+        method: "PATCH",
         headers: {
-          'Content-Type': 'application/json'
-        }
-      })
-    }
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(postObj)
+      }).then(() => fetch(postURL)
+                    .then(parseJSON)
+                    .then(listPosts))
+    })
   })
-
-  div.appendChild(button)
 }
 
 function addTitle(div, post) {
@@ -223,6 +252,26 @@ function addSubmitEvent(form, ul, post) {
     displayComment(ul, commentElement)
     postNew(commentsUrl, comment)
   })
+}
+
+function addDeletePost(div, post) {
+  let button = document.createElement('button')
+  button.textContent = "Remove Post"
+
+  button.addEventListener("click", event => {
+    if(event.target.tagName == 'BUTTON') {
+      event.target.parentNode.parentNode.remove()
+
+      fetch(`${postURL}/${post.id}`, {
+        method: "DELETE",
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+    }
+  })
+
+  div.appendChild(button)
 }
 
 function createCommentElement(content) {
