@@ -6,7 +6,6 @@ class PostsController < ApplicationController
 
   def create
     post = Post.create(allow_params)
-    render json: post
   end
 
   def destroy
