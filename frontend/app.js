@@ -30,7 +30,16 @@ function AddPostElement() {
     let form = document.createElement('form')
     addTitleInputField(form, "")
     addDescriptionInputField(form, "")
-    addImageInputField(form, "")
+
+    let imageElement = document.createElement('img')
+    form.appendChild(imageElement)
+
+    let input = addImageInputField(form, "")
+
+    input.addEventListener('input', () => {
+      imageElement.src = input.value
+    })
+
     addSubmitButton(form)
     main.appendChild(form)
 
@@ -180,10 +189,22 @@ function addEditPost(div, post) {
 
     let form = document.createElement('form')
     addTitleInputField(form, post.title)
+
     addDescriptionInputField(form, post.description)
-    addImageInputField(form, post.image)
+
+    let imageElement = document.createElement('img')
+    form.appendChild(imageElement)
+
+    let input = addImageInputField(form, post.image)
+
+    imageElement.src = input.value
+    input.addEventListener('input', () => {
+      imageElement.src = input.value
+    })
+
     addSubmitButton(form)
     main.appendChild(form)
+
 
     form.addEventListener("submit", event => {
       event.preventDefault()
@@ -285,9 +306,10 @@ function addImageInputField(form, value) {
   inputElement.value = value
   inputElement.placeholder = "Add an image URL"
   inputElement.className = "form-control"
-
   div.appendChild(inputElement)
   form.appendChild(div)
+
+  return inputElement
 }
 
 function addSubmitEvent(form, ul, post) {
