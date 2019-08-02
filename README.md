@@ -1,4 +1,4 @@
-We used Ruby version 2.6.1
+We used Ruby version 2.6.1 and [lite-server](https://www.npmjs.com/package/lite-server).
 
 Make sure to run ```bundle install```, ```rails db:create```, ```rails db:migrate``` and ```rails db:seed``` before running the app. 
 
