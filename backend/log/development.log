@@ -9505,3 +9505,562 @@ Completed 200 OK in 10ms (Views: 4.9ms | ActiveRecord: 1.8ms)
   ↳ db/seeds.rb:34
   [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
   ↳ db/seeds.rb:34
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[36mComment Destroy (116.0ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  ↳ db/seeds.rb:8
+  [1m[36mPost Destroy (35.8ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mPost Create (1.6ms)[0m  [1m[32mINSERT INTO "posts" ("posted", "title", "description", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["posted", "08/02/2019"], ["title", "Dog Boarding Kennel"], ["description", "We have recently opened a dog boarding facility near Murphy Creek in Aurora. We have nice climate controlled indoor kennels with cots, and we have two private turf yards for your dogs to play in. We have an excellent and very experienced staff. This this owner operated, and we live on the premises. Our rate is $30/per night per dog."], ["image", "https://images.craigslist.org/00x0x_d2JbHLwsGJM_600x450.jpg"], ["created_at", "2019-08-02 14:48:52.000316"], ["updated_at", "2019-08-02 14:48:52.000316"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mComment Create (0.7ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["post_id", 51], ["content", "What is your phone number"], ["created_at", "2019-08-02 14:48:52.013220"], ["updated_at", "2019-08-02 14:48:52.013220"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["post_id", 51], ["content", "720-939-2595"], ["created_at", "2019-08-02 14:48:52.015864"], ["updated_at", "2019-08-02 14:48:52.015864"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["post_id", 51], ["content", "You can find more details at http://murphycreekpetresort.com/"], ["created_at", "2019-08-02 14:48:52.017702"], ["updated_at", "2019-08-02 14:48:52.017702"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mPost Create (0.2ms)[0m  [1m[32mINSERT INTO "posts" ("posted", "title", "description", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["posted", "08/02/2019"], ["title", "26\" Folding Mountain Bike Hybrid Bike 7 Speeds Full Suspension - $249"], ["description", "We got this bike to travel with by air or road trips. This is brand new 26 folding bike (never used), which is fashionably designed for comfortable riding. Riding with style and convenience, this fashionable designed bike can be easily folded and storage or transportation (see pictures). You can also purchase a travel bag for $27 online (bag size L38\"xW14\"xH29\") or if you have a box with these dimensions. This bike is perfect for commuting to work, or riding in parks as well as in camping ground, where it can be easily folded and stored in compact small spaces like the trunk of your vehicle. Pictures included shows the bike folded for easy transport and the bike in travel bag is accepted by all major airlines. Please check with your airline before traveling. For example, if you have large distance to explore and cover on your next trip to Europe this bike is the best option. Paid $299 marked down to sell fast. Please send me an email if you have any questions."], ["image", "https://images.craigslist.org/00h0h_hupFBIUT1wP_600x450.jpg"], ["created_at", "2019-08-02 14:48:52.019572"], ["updated_at", "2019-08-02 14:48:52.019572"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:24
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["post_id", 52], ["content", "What is your email address?"], ["created_at", "2019-08-02 14:48:52.021335"], ["updated_at", "2019-08-02 14:48:52.021335"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:25
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["post_id", 52], ["content", "bob@gmail.com"], ["created_at", "2019-08-02 14:48:52.023375"], ["updated_at", "2019-08-02 14:48:52.023375"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["post_id", 52], ["content", "Is this available for delivery?"], ["created_at", "2019-08-02 14:48:52.025261"], ["updated_at", "2019-08-02 14:48:52.025261"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:28
+  [1m[36mPost Create (0.2ms)[0m  [1m[32mINSERT INTO "posts" ("posted", "title", "description", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["posted", "08/02/2019"], ["title", "Crate & Barrel Large Couch - $350 (Parker)"], ["description", "Getting prepared for a big move and have to let this go. Couch has been up kept, no holes or excessive stains. We have owned the couch for a year and a half."], ["image", "https://images.craigslist.org/00909_g01WgJRU6c9_600x450.jpg"], ["created_at", "2019-08-02 14:48:52.027074"], ["updated_at", "2019-08-02 14:48:52.027074"]]
+  ↳ db/seeds.rb:28
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:33
+  [1m[36mComment Create (0.2ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["post_id", 53], ["content", "Can I drop by to take a look at it?"], ["created_at", "2019-08-02 14:48:52.028810"], ["updated_at", "2019-08-02 14:48:52.028810"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:34
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["post_id", 53], ["content", "Yes. Call me at 720-333-9923"], ["created_at", "2019-08-02 14:48:52.030695"], ["updated_at", "2019-08-02 14:48:52.030695"]]
+  ↳ db/seeds.rb:34
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:34
+Started GET "/posts" for ::1 at 2019-08-02 08:49:32 -0600
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/tringuyen/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by PostsController#index as */*
+  [1m[36mPost Load (2.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/models/post.rb:5
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 51]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 52]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (8.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 53]]
+  ↳ app/controllers/posts_controller.rb:4
+Completed 200 OK in 75ms (Views: 13.3ms | ActiveRecord: 27.0ms)
+
+
+Started GET "/posts" for ::1 at 2019-08-02 09:17:22 -0600
+Processing by PostsController#index as */*
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/models/post.rb:5
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 51]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 52]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 53]]
+  ↳ app/controllers/posts_controller.rb:4
+Completed 200 OK in 15ms (Views: 10.4ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/posts" for ::1 at 2019-08-02 10:28:39 -0600
+Processing by PostsController#index as */*
+  [1m[36mPost Load (10.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/models/post.rb:5
+  [1m[36mComment Load (5.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 51]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 52]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 53]]
+  ↳ app/controllers/posts_controller.rb:4
+Completed 200 OK in 32ms (Views: 12.1ms | ActiveRecord: 18.7ms)
+
+
+Started GET "/posts" for ::1 at 2019-08-02 10:28:44 -0600
+Processing by PostsController#index as */*
+  [1m[36mPost Load (4.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/models/post.rb:5
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 51]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 52]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 53]]
+  ↳ app/controllers/posts_controller.rb:4
+Completed 200 OK in 17ms (Views: 5.5ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/posts" for ::1 at 2019-08-02 10:29:32 -0600
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/models/post.rb:5
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 51]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 52]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 53]]
+  ↳ app/controllers/posts_controller.rb:4
+Completed 200 OK in 8ms (Views: 4.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/posts" for ::1 at 2019-08-02 10:29:53 -0600
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/models/post.rb:5
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 51]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 52]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 53]]
+  ↳ app/controllers/posts_controller.rb:4
+Completed 200 OK in 8ms (Views: 5.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/posts" for ::1 at 2019-08-02 10:30:20 -0600
+Processing by PostsController#index as */*
+  [1m[36mPost Load (1.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/models/post.rb:5
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 51]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (1.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 52]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (61.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 53]]
+  ↳ app/controllers/posts_controller.rb:4
+Completed 200 OK in 79ms (Views: 13.7ms | ActiveRecord: 64.7ms)
+
+
+Started GET "/posts" for ::1 at 2019-08-02 10:31:11 -0600
+Processing by PostsController#index as */*
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/models/post.rb:5
+  [1m[36mComment Load (10.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 51]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (2.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 52]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (28.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 53]]
+  ↳ app/controllers/posts_controller.rb:4
+Completed 200 OK in 50ms (Views: 6.6ms | ActiveRecord: 42.0ms)
+
+
+Started GET "/posts" for ::1 at 2019-08-02 10:32:15 -0600
+Processing by PostsController#index as */*
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/models/post.rb:5
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 51]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (13.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 52]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 53]]
+  ↳ app/controllers/posts_controller.rb:4
+Completed 200 OK in 23ms (Views: 6.2ms | ActiveRecord: 15.4ms)
+
+
+Started GET "/posts" for ::1 at 2019-08-02 10:32:33 -0600
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/models/post.rb:5
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 51]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 52]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 53]]
+  ↳ app/controllers/posts_controller.rb:4
+Completed 200 OK in 12ms (Views: 7.8ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/posts" for ::1 at 2019-08-02 10:33:01 -0600
+Processing by PostsController#index as */*
+  [1m[36mPost Load (2.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/models/post.rb:5
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 51]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 52]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 53]]
+  ↳ app/controllers/posts_controller.rb:4
+Completed 200 OK in 15ms (Views: 9.1ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/posts" for ::1 at 2019-08-02 10:33:40 -0600
+Processing by PostsController#index as */*
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/models/post.rb:5
+  [1m[36mComment Load (1.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 51]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 52]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 53]]
+  ↳ app/controllers/posts_controller.rb:4
+Completed 200 OK in 26ms (Views: 21.0ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/posts" for ::1 at 2019-08-02 10:34:55 -0600
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/models/post.rb:5
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 51]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (3.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 52]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 53]]
+  ↳ app/controllers/posts_controller.rb:4
+Completed 200 OK in 16ms (Views: 9.0ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/posts" for ::1 at 2019-08-02 10:35:53 -0600
+Processing by PostsController#index as */*
+  [1m[36mPost Load (1.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/models/post.rb:5
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 51]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 52]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 53]]
+  ↳ app/controllers/posts_controller.rb:4
+Completed 200 OK in 9ms (Views: 4.5ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/posts" for ::1 at 2019-08-02 10:36:45 -0600
+Processing by PostsController#index as */*
+  [1m[36mPost Load (26.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/models/post.rb:5
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 51]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (14.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 52]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 53]]
+  ↳ app/controllers/posts_controller.rb:4
+Completed 200 OK in 51ms (Views: 7.4ms | ActiveRecord: 42.1ms)
+
+
+Started GET "/posts" for ::1 at 2019-08-02 10:40:25 -0600
+Processing by PostsController#index as */*
+  [1m[36mPost Load (10.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/models/post.rb:5
+  [1m[36mComment Load (16.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 51]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 52]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 53]]
+  ↳ app/controllers/posts_controller.rb:4
+Completed 200 OK in 36ms (Views: 5.9ms | ActiveRecord: 28.4ms)
+
+
+Started GET "/posts" for ::1 at 2019-08-02 10:41:14 -0600
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/models/post.rb:5
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 51]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 52]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 53]]
+  ↳ app/controllers/posts_controller.rb:4
+Completed 200 OK in 10ms (Views: 6.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/posts" for ::1 at 2019-08-02 10:42:14 -0600
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/models/post.rb:5
+  [1m[36mComment Load (7.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 51]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (1.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 52]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (48.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 53]]
+  ↳ app/controllers/posts_controller.rb:4
+Completed 200 OK in 77ms (Views: 15.5ms | ActiveRecord: 58.5ms)
+
+
+Started POST "/posts" for ::1 at 2019-08-02 10:43:38 -0600
+Processing by PostsController#create as */*
+  Parameters: {"title"=>"asdfa", "description"=>"sdf", "image"=>"https://images.unsplash.com/photo-1532386236358-a33d8a9434e3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80", "post"=>{"title"=>"asdfa", "description"=>"sdf", "image"=>"https://images.unsplash.com/photo-1532386236358-a33d8a9434e3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:8
+  [1m[36mPost Create (2.6ms)[0m  [1m[32mINSERT INTO "posts" ("posted", "title", "description", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["posted", "08/02/2019"], ["title", "asdfa"], ["description", "sdf"], ["image", "https://images.unsplash.com/photo-1532386236358-a33d8a9434e3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"], ["created_at", "2019-08-02 16:43:38.739806"], ["updated_at", "2019-08-02 16:43:38.739806"]]
+  ↳ app/controllers/posts_controller.rb:8
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:8
+Completed 204 No Content in 8ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/posts" for ::1 at 2019-08-02 10:43:38 -0600
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/models/post.rb:5
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 54]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 51]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 52]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 53]]
+  ↳ app/controllers/posts_controller.rb:4
+Completed 200 OK in 9ms (Views: 6.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/posts" for ::1 at 2019-08-02 10:44:23 -0600
+Processing by PostsController#index as */*
+  [1m[36mPost Load (16.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/models/post.rb:5
+  [1m[36mComment Load (3.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 54]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (1.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 51]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (4.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 52]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 53]]
+  ↳ app/controllers/posts_controller.rb:4
+Completed 200 OK in 36ms (Views: 8.7ms | ActiveRecord: 26.1ms)
+
+
+Started DELETE "/posts/54" for ::1 at 2019-08-02 10:45:03 -0600
+Processing by PostsController#destroy as */*
+  Parameters: {"id"=>"54", "post"=>{}}
+  [1m[36mPost Load (1.8ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 54], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:12
+  [1m[36mComment Load (1.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 54]]
+  ↳ app/controllers/posts_controller.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:14
+  [1m[36mPost Destroy (1.7ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 54]]
+  ↳ app/controllers/posts_controller.rb:14
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:14
+Completed 204 No Content in 17ms (ActiveRecord: 5.8ms)
+
+
+Started GET "/posts" for ::1 at 2019-08-02 10:45:36 -0600
+Processing by PostsController#index as */*
+  [1m[36mPost Load (2.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/models/post.rb:5
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 51]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (1.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 52]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 53]]
+  ↳ app/controllers/posts_controller.rb:4
+Completed 200 OK in 12ms (Views: 6.6ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/posts" for ::1 at 2019-08-02 10:46:08 -0600
+Processing by PostsController#index as */*
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/models/post.rb:5
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 51]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 52]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 53]]
+  ↳ app/controllers/posts_controller.rb:4
+Completed 200 OK in 12ms (Views: 7.5ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/posts" for ::1 at 2019-08-02 10:50:56 -0600
+Processing by PostsController#index as */*
+  [1m[36mPost Load (4.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/models/post.rb:5
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 51]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 52]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 53]]
+  ↳ app/controllers/posts_controller.rb:4
+Completed 200 OK in 14ms (Views: 6.8ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/posts" for ::1 at 2019-08-02 10:51:27 -0600
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/models/post.rb:5
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 51]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 52]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 53]]
+  ↳ app/controllers/posts_controller.rb:4
+Completed 200 OK in 20ms (Views: 16.6ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/posts" for ::1 at 2019-08-02 10:51:59 -0600
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/models/post.rb:5
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 51]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 52]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 53]]
+  ↳ app/controllers/posts_controller.rb:4
+Completed 200 OK in 10ms (Views: 6.8ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/posts" for ::1 at 2019-08-02 10:52:33 -0600
+Processing by PostsController#create as */*
+  Parameters: {"title"=>"", "description"=>"", "image"=>"https://images.unsplash.com/photo-1532386236358-a33d8a9434e3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80", "post"=>{"title"=>"", "description"=>"", "image"=>"https://images.unsplash.com/photo-1532386236358-a33d8a9434e3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:8
+  [1m[36mPost Create (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("posted", "title", "description", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["posted", "08/02/2019"], ["title", ""], ["description", ""], ["image", "https://images.unsplash.com/photo-1532386236358-a33d8a9434e3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"], ["created_at", "2019-08-02 16:52:33.170243"], ["updated_at", "2019-08-02 16:52:33.170243"]]
+  ↳ app/controllers/posts_controller.rb:8
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:8
+Completed 204 No Content in 5ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/posts" for ::1 at 2019-08-02 10:52:33 -0600
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/models/post.rb:5
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 55]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 51]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 52]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 53]]
+  ↳ app/controllers/posts_controller.rb:4
+Completed 200 OK in 14ms (Views: 9.9ms | ActiveRecord: 2.5ms)
+
+
+Started DELETE "/posts/55" for ::1 at 2019-08-02 10:52:38 -0600
+Processing by PostsController#destroy as */*
+  Parameters: {"id"=>"55", "post"=>{}}
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 55], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:12
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 55]]
+  ↳ app/controllers/posts_controller.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:14
+  [1m[36mPost Destroy (1.3ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 55]]
+  ↳ app/controllers/posts_controller.rb:14
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:14
+Completed 204 No Content in 11ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/posts" for ::1 at 2019-08-02 10:52:45 -0600
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/models/post.rb:5
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 51]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 52]]
+  ↳ app/controllers/posts_controller.rb:4
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 53]]
+  ↳ app/controllers/posts_controller.rb:4
+Completed 200 OK in 7ms (Views: 4.4ms | ActiveRecord: 1.3ms)
+
+
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[36mComment Destroy (0.8ms)[0m  [1m[31mDELETE FROM "comments"[0m
+  ↳ db/seeds.rb:8
+  [1m[36mPost Destroy (1.2ms)[0m  [1m[31mDELETE FROM "posts"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mPost Create (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("posted", "title", "description", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["posted", "08/02/2019"], ["title", "Dog Boarding Kennel"], ["description", "We have recently opened a dog boarding facility near Murphy Creek in Aurora. We have nice climate controlled indoor kennels with cots, and we have two private turf yards for your dogs to play in. We have an excellent and very experienced staff. This this owner operated, and we live on the premises. Our rate is $30/per night per dog."], ["image", "https://images.craigslist.org/00x0x_d2JbHLwsGJM_600x450.jpg"], ["created_at", "2019-08-02 16:53:21.561746"], ["updated_at", "2019-08-02 16:53:21.561746"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mComment Create (0.6ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["post_id", 56], ["content", "What is your phone number"], ["created_at", "2019-08-02 16:53:21.573191"], ["updated_at", "2019-08-02 16:53:21.573191"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mComment Create (0.6ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["post_id", 56], ["content", "720-939-2595"], ["created_at", "2019-08-02 16:53:21.576364"], ["updated_at", "2019-08-02 16:53:21.576364"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["post_id", 56], ["content", "You can find more details at http://murphycreekpetresort.com/"], ["created_at", "2019-08-02 16:53:21.579431"], ["updated_at", "2019-08-02 16:53:21.579431"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mPost Create (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("posted", "title", "description", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["posted", "08/02/2019"], ["title", "26\" Folding Mountain Bike Hybrid Bike 7 Speeds Full Suspension - $249"], ["description", "We got this bike to travel with by air or road trips. This is brand new 26 folding bike (never used), which is fashionably designed for comfortable riding. Riding with style and convenience, this fashionable designed bike can be easily folded and storage or transportation (see pictures). You can also purchase a travel bag for $27 online (bag size L38\"xW14\"xH29\") or if you have a box with these dimensions. This bike is perfect for commuting to work, or riding in parks as well as in camping ground, where it can be easily folded and stored in compact small spaces like the trunk of your vehicle. Pictures included shows the bike folded for easy transport and the bike in travel bag is accepted by all major airlines. Please check with your airline before traveling. For example, if you have large distance to explore and cover on your next trip to Europe this bike is the best option. Paid $299 marked down to sell fast. Please send me an email if you have any questions."], ["image", "https://images.craigslist.org/00h0h_hupFBIUT1wP_600x450.jpg"], ["created_at", "2019-08-02 16:53:21.582327"], ["updated_at", "2019-08-02 16:53:21.582327"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:24
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["post_id", 57], ["content", "What is your email address?"], ["created_at", "2019-08-02 16:53:21.585050"], ["updated_at", "2019-08-02 16:53:21.585050"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:25
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["post_id", 57], ["content", "bob@gmail.com"], ["created_at", "2019-08-02 16:53:21.587651"], ["updated_at", "2019-08-02 16:53:21.587651"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["post_id", 57], ["content", "Is this available for delivery?"], ["created_at", "2019-08-02 16:53:21.590194"], ["updated_at", "2019-08-02 16:53:21.590194"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:28
+  [1m[36mPost Create (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("posted", "title", "description", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["posted", "08/02/2019"], ["title", "Crate & Barrel Large Couch - $350 (Parker)"], ["description", "Getting prepared for a big move and have to let this go. Couch has been up kept, no holes or excessive stains. We have owned the couch for a year and a half."], ["image", "https://images.craigslist.org/00909_g01WgJRU6c9_600x450.jpg"], ["created_at", "2019-08-02 16:53:21.592822"], ["updated_at", "2019-08-02 16:53:21.592822"]]
+  ↳ db/seeds.rb:28
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:33
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["post_id", 58], ["content", "Can I drop by to take a look at it?"], ["created_at", "2019-08-02 16:53:21.595406"], ["updated_at", "2019-08-02 16:53:21.595406"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:34
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["post_id", 58], ["content", "Yes. Call me at 720-333-9923"], ["created_at", "2019-08-02 16:53:21.597668"], ["updated_at", "2019-08-02 16:53:21.597668"]]
+  ↳ db/seeds.rb:34
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:34
